@@ -17,11 +17,15 @@ describe('Node',() => {
     assert.equal(node.data, null);
   })
 
-  it('should have a propert of children set to an empty object', () => {
+  it('should have a property of children set to an empty object', () => {
     assert.deepEqual(node.children, {});
   })
 
   it('should have a property of complete set to false', () => {
     assert.equal(node.complete, false)
+  })
+
+  it('should have a property of popularity set to zero', () => {
+    assert.equal(node.popularity, 0)
   })
 })

@@ -85,6 +85,10 @@ describe('Trie',() => {
 
     assert.deepEqual(result, [ 'create', 'crash', 'crazy', 'cringe'])
   })
+
+
+
+
   })
 
   describe('Populate', () => {
@@ -93,4 +97,17 @@ describe('Trie',() => {
       assert.equal(trie.wordCount, 234371)
     })
   })
+  describe('Select', () => {
+
+    it.only('should increment the popularity of the node', () => {
+      trie.populate(['pize', 'pizza', 'pizzaria'])
+      trie.select('pizzaria')
+      const expectation = trie.suggest('pi')
+
+      assert.equal(expectation[0], 'pizzaria')
+    })
+  })
 })
+
+
+
